@@ -30,7 +30,7 @@ const Hero = () => {
                     <div className="mt-7">
                         <Link
                             href="#library"
-                            className="inline-flex h-10 items-center justify-center rounded-md bg-accent px-6 text-xs font-bold uppercase tracking-[0.3px] text-black transition-opacity duration-200 hover:opacity-90"
+                            className="inline-flex h-10 items-center justify-center rounded-md bg-accent px-6 text-xs font-bold uppercase tracking-[0.3px] text-black transition-opacity duration-200 hover:opacity-90 hover:bg-white"
                         >
                             Browse Workout
                         </Link>

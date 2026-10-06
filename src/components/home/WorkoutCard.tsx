@@ -1,16 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FiClock, FiStar } from "react-icons/fi";
+import { IoFlameOutline } from "react-icons/io5";
 import { Workout } from "@/src/types/Workout";
 
-interface WorkoutCardProps  {
+interface WorkoutCardProps {
     workout: Workout;
-};
+}
 
 const WorkoutCard = ({ workout }: WorkoutCardProps) => {
     return (
         <Link
             href={`/workout/${workout.id}`}
-            className="group overflow-hidden rounded-2xl border border-border bg-surface hover:border-accent"
+            className="group overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-accent"
         >
             {/* Workout Image */}
             <div className="relative h-80 w-full overflow-hidden">
@@ -30,7 +32,7 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
                     {workout.muscleGroups.map((muscle) => (
                         <span
                             key={muscle}
-                            className="rounded bg-accent px-2.5 py-0.5 text-[11px] mb-2 font-bold uppercase tracking-[0.55px] text-black"
+                            className="mb-2 rounded bg-accent px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-[0.55px] text-black"
                         >
                             {muscle}
                         </span>
@@ -48,49 +50,25 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
                 </p>
 
                 {/* Stats */}
-                <div className="mt-4 flex items-center gap-4 border-t border-[#20242e] pt-3 text-xs text-muted">
+                <div className="mt-4 flex flex-wrap items-center gap-4 border-t border-[#20242e] pt-3 text-xs text-muted">
 
                     {/* Duration */}
                     <div className="flex items-center gap-1.5">
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            className="size-3.5"
-                        >
-                            <circle cx="12" cy="12" r="9" />
-                            <path d="M12 7v5l3 2" />
-                        </svg>
+                        <FiClock size={14} />
 
                         <span>{workout.duration} min</span>
                     </div>
 
                     {/* Calories */}
                     <div className="flex items-center gap-1.5">
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            className="size-3.5"
-                        >
-                            <path d="M12 22c4.4 0 8-3.3 8-7.7 0-3.1-1.8-5.8-4.6-8.5.1 2.1-.7 3.5-2 4.5.2-3.8-2.3-6.7-5.5-8.3.3 3.2-1.1 5.3-2.4 7.2C4.4 10.8 4 12.4 4 14.3 4 18.7 7.6 22 12 22Z" />
-                        </svg>
+                        <IoFlameOutline size={15} />
 
                         <span>{workout.caloriesBurned} kcal</span>
                     </div>
 
                     {/* Rating */}
                     <div className="flex items-center gap-1.5">
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinejoin="round"
-                            className="size-3.5"
-                        >
-                            <path d="m12 2.8 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2L3 9.4l6.2-.9L12 2.8Z" />
-                        </svg>
+                        <FiStar size={14} />
 
                         <span>{workout.rating}</span>
                     </div>
