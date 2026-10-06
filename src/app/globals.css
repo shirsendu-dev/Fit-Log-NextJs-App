@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  /* Main backgrounds */
+  --background: #0f1115;
+  --background-deep: #0c0d10;
+
+  /* Card / surface colors */
+  --surface: #15171d;
+  --surface-light: #1b1f28;
+  --surface-alt: #232732;
+
+  /* Main accent */
+  --accent: #c2f800;
+  --accent-light: #ccff00;
+
+  /* Text colors */
+  --foreground: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+
+  /* Borders */
+  --border: #232732;
+}
+
+@theme inline {
+  /* Background */
+  --color-background: var(--background);
+  --color-background-deep: var(--background-deep);
+
+  /* Surfaces */
+  --color-surface: var(--surface);
+  --color-surface-light: var(--surface-light);
+  --color-surface-alt: var(--surface-alt);
+
+  /* Accent */
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+
+  /* Text */
+  --color-foreground: var(--foreground);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+
+  /* Border */
+  --color-border: var(--border);
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-oswald);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+a {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+button {
+  cursor: pointer;
+}
