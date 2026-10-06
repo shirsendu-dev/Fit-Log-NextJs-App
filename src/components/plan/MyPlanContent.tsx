@@ -216,7 +216,7 @@ const MyPlanContent = () => {
                     <div className="flex min-h-[300px] flex-col items-center justify-center rounded-2xl border border-border bg-surface px-5 py-12 text-center sm:min-h-[300px]">
 
                         <h2 className="font-display text-[22px] font-bold uppercase text-white sm:text-[24px]">
-                            NOTHING HERE YET
+                            Nothing here yet
                         </h2>
 
                         <p className="mt-2 text-sm leading-6 text-muted">

@@ -32,7 +32,7 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
                     {workout.muscleGroups.map((muscle) => (
                         <span
                             key={muscle}
-                            className="mb-2 rounded bg-accent px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-[0.55px] text-black"
+                            className="mb-2 rounded bg-accent px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.55px] text-black"
                         >
                             {muscle}
                         </span>
