@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Hero = () => {
     return (
-        <section className="mx-auto mt-12 max-w-[1280px] px-6">
+        <section className="mx-auto max-w-[1280px] px-6">
             <div className="flex flex-col items-center justify-between gap-10 rounded-2xl border border-border bg-surface p-8 text-center lg:min-h-[448px] lg:flex-row lg:px-14 lg:py-14 lg:text-left">
 
                 {/* Left Content */}
@@ -38,14 +38,14 @@ const Hero = () => {
                 </div>
 
                 {/* Right Image */}
-                <div className="flex w-full items-center justify-center lg:w-auto">
+                <div className="flex w-full items-center justify-center lg:w-[460px] lg:flex-shrink-0">
                     <Image
                         src="/assets/banner.png"
-                        alt="FitLog workout illustration"
-                        width={334}
-                        height={334}
+                        alt="FitLog workout Image"
+                        width={400}
+                        height={400}
                         priority
-                        // className="h-auto w-full max-w-[300px] object-contain sm:max-w-[320px] lg:h-[334px] lg:w-[400px]"
+                        className="h-auto w-full max-w-[340px] object-contain sm:max-w-[400px] lg:max-w-[400px]"
                     />
                 </div>
 

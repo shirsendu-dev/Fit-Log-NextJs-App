@@ -1,33 +1,33 @@
 import Image from "next/image";
 
 const Footer = () => {
-    return (
-        <footer className="mt-16 border-t border-[#1a1d24] bg-[#090a0d]">
-            <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-10">
+  return (
+    <footer className="border-t border-[#1a1d24] bg-[#090a0d]">
+      <div className="mx-auto flex max-w-[1280px] flex-col items-center gap-4 px-6 py-8 text-center sm:flex-row sm:justify-between sm:py-10 sm:text-left">
 
-                {/* Logo */}
-                <div className="flex items-center gap-2">
-                    <Image
-                        src="/assets/logo.png"
-                        alt="FitLog logo"
-                        width={28}
-                        height={28}
-                        className="h-7 w-7 object-contain"
-                    />
+        {/* Logo */}
+        <div className="flex items-center justify-center gap-2 sm:justify-start">
+          <Image
+            src="/assets/logo.png"
+            alt="FitLog logo"
+            width={28}
+            height={28}
+            className="h-7 w-7 object-contain"
+          />
 
-                    <span className="font-display text-[22px] font-bold tracking-[0.7px] text-white">
-                        FITLOG
-                    </span>
-                </div>
+          <span className="font-display text-[25px] font-bold tracking-[0.7px] text-white">
+            FITLOG
+          </span>
+        </div>
 
-                {/* Copyright */}
-                <p className="text-sm leading-4 text-[#6b7280]">
-                    © 2026 FitLog — Workout Library. Train hard, log honest.
-                </p>
+        {/* Copyright */}
+        <p className="max-w-[320px] text-sm leading-5 text-[#6b7280] sm:max-w-none sm:text-right">
+          © 2026 FitLog — Workout Library. Train hard, log honest.
+        </p>
 
-            </div>
-        </footer>
-    );
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

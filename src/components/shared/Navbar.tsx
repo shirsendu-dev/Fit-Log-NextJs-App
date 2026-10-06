@@ -29,7 +29,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="relative z-50 border-b border-[#1c1f26] bg-[#0c0d10]/95">
+    <header className="sticky top-0 z-50 border-b border-[#1c1f26] bg-[#0c0d10]/95 backdrop-blur-md">
       <div className="mx-auto grid h-20 max-w-[1280px] grid-cols-[1fr_auto_1fr] items-center px-6">
 
         {/* Logo */}
@@ -47,7 +47,7 @@ const Navbar = () => {
             className="h-7 w-7 object-contain"
           />
 
-          <span className="font-display text-[22px] font-bold leading-7 tracking-[0.9px] text-white">
+          <span className="font-display text-[25px] font-bold leading-7 tracking-[0.9px] text-white">
             FITLOG
           </span>
         </Link>
