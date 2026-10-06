@@ -14,7 +14,7 @@ The project follows a dark fitness-focused UI and is fully responsive for mobile
 
 ## 📂 GitHub Repository
 
-[FitLog GitHub Repository](YOUR_GITHUB_REPOSITORY_LINK_HERE)
+[FitLog GitHub Repository](https://github.com/shirsendu-dev/Fit-Log-NextJs-App)
 
 ---
 
