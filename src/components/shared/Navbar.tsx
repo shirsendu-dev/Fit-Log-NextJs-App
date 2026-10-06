@@ -4,9 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiMenu } from "react-icons/fi";
+import { useWorkout } from "@/src/context/WorkoutContext";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const { plan, saved } = useWorkout();
 
   const navLinks = [
     {
@@ -29,9 +31,9 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background-deep/95 backdrop-blur-md">
-      <div className="navbar mx-auto h-20 max-w-[1280px] px-6">
+      <div className="navbar mx-auto h-20 max-w-[1280px]">
 
-        {/* Navbar Start - Logo */}
+        {/* Navbar Start */}
         <div className="navbar-start">
           <Link
             href="/"
@@ -52,7 +54,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Navbar Center - Desktop Menu */}
+        {/* Desktop Menu */}
         <div className="navbar-center hidden md:flex">
           <ul className="menu menu-horizontal gap-1 p-0">
             {navLinks.map((link) => {
@@ -78,7 +80,7 @@ const Navbar = () => {
         {/* Navbar End */}
         <div className="navbar-end">
 
-          {/* Desktop Plan / Saved */}
+          {/* Desktop Counters */}
           <div className="hidden items-center gap-6 md:flex">
 
             {/* Plan */}
@@ -90,8 +92,8 @@ const Navbar = () => {
                 Plan
               </span>
 
-              <span className="badge h-5 min-h-5 w-5 border-0 bg-accent p-0 text-[12px] font-bold text-black">
-                0
+              <span className="badge h-5 min-h-5 min-w-5 border-0 bg-accent px-1 text-[12px] font-bold text-black">
+                {plan.length}
               </span>
             </Link>
 
@@ -104,8 +106,8 @@ const Navbar = () => {
                 Saved
               </span>
 
-              <span className="badge h-5 min-h-5 w-5 border border-border bg-transparent p-0 text-[12px] font-medium text-secondary group-hover:border-accent group-hover:text-accent">
-                0
+              <span className="badge h-5 min-h-5 min-w-5 border border-border bg-transparent px-1 text-[12px] font-medium text-secondary group-hover:border-accent group-hover:text-accent">
+                {saved.length}
               </span>
             </Link>
 
@@ -113,7 +115,6 @@ const Navbar = () => {
 
           {/* Mobile Dropdown */}
           <div className="dropdown dropdown-end md:hidden">
-
             <div
               tabIndex={0}
               role="button"
@@ -126,7 +127,6 @@ const Navbar = () => {
               tabIndex={-1}
               className="menu dropdown-content z-50 mt-3 w-60 rounded-xl border border-border bg-background-deep p-3 shadow-xl"
             >
-
               {/* Mobile Menu Links */}
               {navLinks.map((link) => {
                 const active = isActive(link.href);
@@ -157,8 +157,8 @@ const Navbar = () => {
                 >
                   <span>Plan</span>
 
-                  <span className="badge h-5 min-h-5 w-5 border-0 bg-accent p-0 text-[11px] font-bold text-black">
-                    0
+                  <span className="badge h-5 min-h-5 min-w-5 border-0 bg-accent px-1 text-[11px] font-bold text-black">
+                    {plan.length}
                   </span>
                 </Link>
               </li>
@@ -171,12 +171,11 @@ const Navbar = () => {
                 >
                   <span>Saved</span>
 
-                  <span className="badge h-5 min-h-5 w-5 border border-border bg-transparent p-0 text-[11px] text-secondary">
-                    0
+                  <span className="badge h-5 min-h-5 min-w-5 border border-border bg-transparent px-1 text-[11px] text-secondary">
+                    {saved.length}
                   </span>
                 </Link>
               </li>
-
             </ul>
           </div>
 

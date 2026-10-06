@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { FiBookmark, FiPlusSquare, FiArrowLeft } from "react-icons/fi";
+
 import { getWorkoutById } from "@/src/lib/workouts";
+import WorkoutActions from "@/src/components/workout/WorkoutActions";
 
 type WorkoutDetailsPageProps = {
     params: Promise<{
@@ -65,6 +65,7 @@ const WorkoutDetailsPage = async ({
                     {/* Specs */}
                     <div className="mt-7 overflow-hidden rounded-2xl border border-border bg-surface">
 
+                        {/* Equipment */}
                         <div className="flex min-h-12 items-center justify-between gap-4 px-4 py-3 sm:px-6">
                             <span className="text-[11px] font-bold uppercase tracking-[0.6px] text-muted sm:text-xs">
                                 Equipment
@@ -75,6 +76,7 @@ const WorkoutDetailsPage = async ({
                             </span>
                         </div>
 
+                        {/* Difficulty */}
                         <div className="flex min-h-12 items-center justify-between gap-4 border-t border-border px-4 py-3 sm:px-6">
                             <span className="text-[11px] font-bold uppercase tracking-[0.6px] text-muted sm:text-xs">
                                 Difficulty
@@ -85,6 +87,7 @@ const WorkoutDetailsPage = async ({
                             </span>
                         </div>
 
+                        {/* Sets */}
                         <div className="flex min-h-12 items-center justify-between gap-4 border-t border-border px-4 py-3 sm:px-6">
                             <span className="text-[11px] font-bold uppercase tracking-[0.6px] text-muted sm:text-xs">
                                 Sets
@@ -95,6 +98,7 @@ const WorkoutDetailsPage = async ({
                             </span>
                         </div>
 
+                        {/* Reps */}
                         <div className="flex min-h-12 items-center justify-between gap-4 border-t border-border px-4 py-3 sm:px-6">
                             <span className="text-[11px] font-bold uppercase tracking-[0.6px] text-muted sm:text-xs">
                                 Reps
@@ -105,6 +109,7 @@ const WorkoutDetailsPage = async ({
                             </span>
                         </div>
 
+                        {/* Duration */}
                         <div className="flex min-h-12 items-center justify-between gap-4 border-t border-border px-4 py-3 sm:px-6">
                             <span className="text-[11px] font-bold uppercase tracking-[0.6px] text-muted sm:text-xs">
                                 Duration
@@ -115,6 +120,7 @@ const WorkoutDetailsPage = async ({
                             </span>
                         </div>
 
+                        {/* Calories */}
                         <div className="flex min-h-12 items-center justify-between gap-4 border-t border-border px-4 py-3 sm:px-6">
                             <span className="text-[11px] font-bold uppercase tracking-[0.6px] text-muted sm:text-xs">
                                 Calories
@@ -125,6 +131,7 @@ const WorkoutDetailsPage = async ({
                             </span>
                         </div>
 
+                        {/* Rating */}
                         <div className="flex min-h-12 items-center justify-between gap-4 border-t border-border px-4 py-3 sm:px-6">
                             <span className="text-[11px] font-bold uppercase tracking-[0.6px] text-muted sm:text-xs">
                                 Rating
@@ -158,39 +165,9 @@ const WorkoutDetailsPage = async ({
                         </ol>
                     </div>
 
-                    {/* Buttons */}
-                    <div className="mt-9 grid grid-cols-1 gap-3 md:grid-cols-3">
+                    {/* Interactive Buttons */}
+                    <WorkoutActions workout={workout} />
 
-                        <button
-                            type="button"
-                            className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-accent px-3 text-[13px] font-semibold text-black transition-opacity hover:opacity-90"
-                        >
-                            <FiPlusSquare size={17} />
-                            <span className="whitespace-nowrap">
-                                Add to today&apos;s plan
-                            </span>
-                        </button>
-
-                        <button
-                            type="button"
-                            className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-border px-3 text-[13px] font-medium text-white transition-colors hover:border-accent hover:text-accent"
-                        >
-                            <FiBookmark size={17} />
-                            <span className="whitespace-nowrap">
-                                Save for later
-                            </span>
-                        </button>
-
-                        <Link
-                            href="/#library"
-                            className="inline-flex h-11 w-full items-center justify-center px-3 text-[13px] font-normal text-white transition-colors hover:text-accent"
-                        >
-                            <span className="whitespace-nowrap">
-                                ← Back to Workout Library
-                            </span>
-                        </Link>
-
-                    </div>
                 </div>
             </div>
         </section>

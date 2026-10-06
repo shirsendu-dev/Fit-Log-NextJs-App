@@ -1,11 +1,7 @@
-import React from 'react';
+import MyPlanContent from "@/src/components/plan/MyPlanContent";
 
 const MyPlanPage = () => {
-    return (
-        <div>
-            <h2>My Plan</h2>
-        </div>
-    );
+  return <MyPlanContent />;
 };
 
 export default MyPlanPage;

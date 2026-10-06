@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 import Navbar from "../components/shared/Navbar";
 import Footer from "../components/shared/Footer";
+import { WorkoutProvider } from "../context/WorkoutContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -35,22 +36,25 @@ export default function RootLayout({
       className={`${inter.variable} ${oswald.variable} h-full`}
     >
       <body className="min-h-full flex flex-col antialiased" cz-shortcut-listen="false" ata-qb-installed="false">
-        
-        <Navbar></Navbar>
-        {children}
-        <Footer></Footer>
 
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop
-          closeOnClick
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
+        <WorkoutProvider>
+          
+          <Navbar></Navbar>
+          {children}
+          <Footer></Footer>
+
+          <ToastContainer
+            position="top-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop
+            closeOnClick
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
+        </WorkoutProvider>
       </body>
     </html>
   );

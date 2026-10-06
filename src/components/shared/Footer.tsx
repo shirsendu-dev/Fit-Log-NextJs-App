@@ -22,7 +22,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <p className="max-w-[320px] text-sm leading-5 text-[#6b7280] sm:max-w-none sm:text-right">
-          © 2026 FitLog — Workout Library. Train hard, log honest.
+          © 2026 FitLog — Workout Library. Train hard, Log honest.
         </p>
 
       </div>
