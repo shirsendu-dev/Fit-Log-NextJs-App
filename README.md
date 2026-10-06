@@ -8,7 +8,7 @@ The project follows a dark fitness-focused UI and is fully responsive for mobile
 
 ## 🔗 Live Website
 
-[FitLog Live Site](YOUR_VERCEL_LINK_HERE)
+[FitLog Live Site](https://fit-log-next-js-app-mu.vercel.app/)
 
 ---
 
